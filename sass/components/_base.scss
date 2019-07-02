@@ -1,11 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 62.5%;
-    box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
 body {
@@ -15,10 +15,20 @@ h2 {
     font-size: 8rem;
 }
 
+
 // Variables
 $black: #000;
 $white: #fff;
 $orange: #ff6033;
+$gray-blue: #5585a2;
+$blue: #355b82;
+$green: #96b92c;
+$red: #f72b3b;
+
 $color-about: #00b2b2;
 
 $color-services: #70bfff;
+
+$color-gallery: #ffe92f;
+
+$color-blog: #b07cf7;
