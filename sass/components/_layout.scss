@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     height: 85vh;
+    align-items: center;
     justify-content: space-between;
     background-image:linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 8%,rgba(255,255,255,0) 53%,rgba(255,255,255,0) 100%), url(/img/bg_header_converted.jpg);
     background-size: cover; 
     background-position: 0% 75%;   
     padding: 0 20rem;
+
     &__container {
         width: 60rem;
         display: flex;
@@ -16,30 +18,29 @@
 }
 .about{
     // background-color: ;
-    background: url(/img/bg_about.jpg)  no-repeat 10% 25% , $color-about;
+    background: url(/img/bg_about.jpg) 30% 50% no-repeat , $color-about;
     padding: 0 20rem;
     display: flex;
-    justify-content: end;
-    align-items: center;
     height: 80rem;
-    color: aliceblue;
+    color: $white; 
+    justify-content: center;
 
     &__container {
-        flex: 0 0 40%;
-        margin-right: 10%;
+        max-width: 120rem;
     }
 }
 
 .services {
     background-color: $color-services;
     padding: 10rem 20rem;
+    display: flex;
+    justify-content: center;
     &__container{
         display: flex;
         align-items: center;
-        justify-content: space-around;
-    }
-    &__box{
-        //padding: 20rem;
+        justify-content: space-between;
+        flex: 1 120rem;
+        max-width: 120rem;
     }
     &__title{
         background: url(/img/bg_services.jpg) no-repeat;
@@ -53,4 +54,97 @@
     & h2{
        text-shadow: 4px 2px $black; 
     }
+}
+
+.gallery {
+    background-color: $color-gallery;
+    padding: 10rem 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .text{
+        width: 50rem;
+        text-align: center;
+    }
+
+    &__container{
+        text-align: center;
+    }
+}
+
+.subscribe{
+    padding: 10rem 20rem;
+    display: flex;
+    justify-content: center;
+
+    background: url(/img/bg_subscirbe.jpg) no-repeat center;
+
+    &__container{
+        flex: 0 120rem;
+    }
+
+    & p {
+        max-width: 60rem;
+    }
+}
+
+
+.blog{
+    padding: 10rem 20rem;
+    display: flex;
+    justify-content: center;
+    color: $white;
+    //flex-direction: column;
+    //align-items: center;
+
+    background-color: $color-blog;
+    &__container{
+        max-width: 120rem;
+        text-align: center;
+    }
+
+    &__posts{
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+}
+
+.contact{
+    padding: 10rem 20rem;
+    display: flex;
+    justify-content: center;
+    background: url(/img/bg_contact.jpg) center/cover no-repeat;
+    &__container{
+        max-width: 120rem;
+    }
+
+    &__panel {
+        margin-bottom: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.footer {
+    background-color: #262626;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 20rem;
+    font-size: 2rem;
+
+    &__container{
+        flex: 0 120rem;
+        display: inherit;
+        justify-content: space-between;
+    }
+
+    &__element{
+        width: 30%;
+        text-align: center;
+        margin: auto 0;
+    }    
 }
