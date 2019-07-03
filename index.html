@@ -12,47 +12,55 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="top">
-            <div class="top__logo">Cahee</div>
-            <nav class="top__nav">
-                <ul class="navigation">
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>Home</span></a></li>
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>About</span></a></li>
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>Services</span></a></li>
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>Gallery</span></a></li>
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>Blog</span></a></li>
-                    <li class="navigation__element"><a href="#" class="navigation__link"><span>Contact</span></a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="top" id="navbar">
+
+        <div class="top__logo">Cahee</div>
+        <nav class="top__nav">
+            <ul class="navigation">
+                <li class="navigation__element"><a href="#" class="navigation__link"><span>Home</span></a></li>
+                <li class="navigation__element"><a href="#about" class="navigation__link"><span>About</span></a></li>
+                <li class="navigation__element"><a href="#" class="navigation__link"><span>Services</span></a></li>
+                <li class="navigation__element"><a href="#gallery" class="navigation__link"><span>Gallery</span></a></li>
+                <li class="navigation__element"><a href="#blog" class="navigation__link"><span>Blog</span></a></li>
+                <li class="navigation__element"><a href="#contact" class="navigation__link"><span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <header id="header" class="header">
         <div class="header__container">
-            <div class="text">
-                <div class="text__heading">
-                    <h1 class="text__heading--primary">Fresh Life</h1>
+            <div class="wrapper">
+                <div class="text">
+                    <div class="text__heading">
+                        <h1 class="text__heading--primary">Fresh Life</h1>
+                    </div>
+                    <div class="text__description">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
+                            id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod
+                            quasi!
+                            Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
+                    </div>
+                    <button class="btn btn--header"> Get free now</button>
                 </div>
-                <div class="text__description">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
-                        id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod quasi!
-                        Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
-                </div>
-                <button class="btn btn--header"> Get free now</button>
             </div>
         </div>
     </header>
-    <section class="about">
-        <div class="about__container">            
-            <div class="text">
-                <div class="text__heading">
-                    <h2 class="text__heading--secondary">About Us</h2>
-                </div>
-                <div class="text__description">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
-                        id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod quasi!
-                        Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
-                        id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod quasi!
-                        Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
+    <section id="about" class="about">
+        <div class="about__container">
+            <div class="wrapper">
+                <div class="text">
+                    <div class="text__heading">
+                        <h2 class="text__heading--secondary">About Us</h2>
+                    </div>
+                    <div class="text__description">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
+                            id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod
+                            quasi!
+                            Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eum
+                            id, atque, dolorem totam consectetur magnam voluptatibus ut commodi necessitatibus quod
+                            quasi!
+                            Excepturi nesciunt modi esse amet dignissimos nihil deleniti.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,7 +92,7 @@
             </div>
         </div>
     </section>
-    <section class="gallery">
+    <section id="gallery" class="gallery">
         <div class="text">
             <div class="text__heading">
                 <h2 class="text__heading--secondary">Gallery</h2>
@@ -109,9 +117,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="album--row">
                     <div class="album__img-wrapper"><img src="img/gallery/gallery4.jpg" alt="" class="album__img"></div>
                     <div class="album__img-wrapper"><img src="img/gallery/gallery5.jpg" alt="" class="album__img"></div>
@@ -140,7 +145,7 @@
             </div>
         </div>
     </section>
-    <section class="blog">
+    <section id="blog" class="blog">
         <div class="blog__container">
 
             <div class="text">
@@ -190,7 +195,7 @@
             <button class="btn btn--blog">View more</button>
         </div>
     </section>
-    <section class="contact">
+    <section id="contact" class="contact">
         <div class="contact__container">
 
             <div class="text">
@@ -239,10 +244,20 @@
         <div class="footer__container">
             <div class="footer__element"> &copy; 2019 Company. All right reserved. </div>
             <div class="footer__element logo">Cahee</div>
-            <div class="footer__element">Made by MW</div>
+            <div class="footer__element">Made by Mateusz Wójcik</div>
         </div>
 
     </footer>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

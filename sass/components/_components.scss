@@ -2,6 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    background-color: rgba($black, .0);
+    position: fixed;
+    transition: .5s;
+    padding: 0 2rem;
+
+
 
     &__logo {
         font-family: 'Pacifico', cursive;
@@ -9,8 +16,23 @@
     }
 
     &__nav {
-        width: 45rem;
+        
     }
+}
+
+.low{
+    background-color: rgba($black, 1);
+    color: $white;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    transition: .5s;
+    box-shadow: 5px 0 5px $black;
+    font-size: 1rem;
 }
 
 .navigation {
@@ -229,9 +251,14 @@
     justify-content: stretch;
     margin-top: 2rem;
 
+
     &--row {
         display: flex;
         max-width: 120rem;
+
+        @include respond(tab-land) {
+            display: block;
+        }
     }
 
     &--col {
@@ -289,6 +316,11 @@
     display: flex;
     cursor: pointer;
 
+    @include respond(tab-land) {
+        width: 36rem;
+        margin-top: 2rem;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -344,6 +376,10 @@
 .form {
     width: 45%;
 
+    @include respond(phone) {
+        width: 95%;
+    }
+
     &__label {
         display: none;
     }
@@ -397,9 +433,13 @@ textarea {
     text-align: center;
     width: 50%;
     margin: 0 auto 4rem;
+
+    @include respond(tab-land) {
+        width: 98%;
+    }
 }
 
-.logo{
+.logo {
     font-size: 3rem;
     font-family: 'Pacifico', cursive;
 }

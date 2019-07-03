@@ -1,48 +1,83 @@
 .header {
     display: flex;
     flex-direction: column;
-    height: 85vh;
+    height: 75vh;
     align-items: center;
-    justify-content: space-between;
-    background-image:linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 8%,rgba(255,255,255,0) 53%,rgba(255,255,255,0) 100%), url(/img/bg_header_converted.jpg);
-    background-size: cover; 
-    background-position: 0% 75%;   
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 53%, rgba(255, 255, 255, 0) 100%), url(/img/bg_header_converted.jpg);
+    background-size: cover;
+    background-position: 0% 75%;
     padding: 0 20rem;
-
-    &__container {
-        width: 60rem;
-        display: flex;
-        flex: 0 0 80%;
-        align-items: flex-start;
-    }
-}
-.about{
-    // background-color: ;
-    background: url(/img/bg_about.jpg) 30% 50% no-repeat , $color-about;
-    padding: 0 20rem;
-    display: flex;
-    height: 80rem;
-    color: $white; 
-    justify-content: center;
+    @include respond(tab-land) {
+        padding: 0rem 1rem 5rem;     
+    }    
 
     &__container {
         max-width: 120rem;
+        display: flex;
+        margin-top: 15rem;
+
     }
 }
 
+.about {
+    background: url(/img/bg_about.jpg) 30% 50% no-repeat, $color-about;
+    padding: 10rem 20rem;
+    display: flex;
+    justify-content: center;
+    color: $white;
+    @include respond(tab-land) {
+        background-position: -20rem;    
+        padding: 5rem 1rem;     
+    }    
+    @include respond(tab-mid) {
+        background-position: -30rem;    
+        padding: 5rem 1rem;     
+    }
+        @include respond(tab-port) {
+        background-position: -30rem;    
+        padding: 5rem 1rem;     
+    }
+    
+    &__container {
+        width: 120rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .wrapper{
+        @include respond(tab-port) {
+            background-color: rgba($black, .5);
+            padding: 5rem;  
+        }
+
+    }
+}
 .services {
     background-color: $color-services;
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
-    &__container{
+    @include respond(tab-port) {
+        padding: 5rem 1rem;
+    }
+    &__box{
+        @include respond(tab-port) {
+            order: 2;         
+        }
+    }
+    &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex: 1 120rem;
         max-width: 120rem;
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
     }
-    &__title{
+
+    &__title {
         background: url(/img/bg_services.jpg) no-repeat;
         width: 55rem;
         height: 55rem;
@@ -51,8 +86,9 @@
         align-items: center;
         color: $white;
     }
-    & h2{
-       text-shadow: 4px 2px $black; 
+
+    & h2 {
+        text-shadow: 4px 2px $black;
     }
 }
 
@@ -63,24 +99,32 @@
     flex-direction: column;
     align-items: center;
 
-    & .text{
+    @include respond(tab-port) {
+        padding: 5rem 1rem;
+    }
+
+    & .text {
         width: 50rem;
         text-align: center;
     }
 
-    &__container{
+    &__container {
         text-align: center;
     }
 }
 
-.subscribe{
+.subscribe {
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
 
     background: url(/img/bg_subscirbe.jpg) no-repeat center;
 
-    &__container{
+    @include respond(tab-land) {
+        padding: 5rem 1rem;
+    }
+
+    &__container {
         flex: 0 120rem;
     }
 
@@ -90,7 +134,7 @@
 }
 
 
-.blog{
+.blog {
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
@@ -99,31 +143,59 @@
     //align-items: center;
 
     background-color: $color-blog;
-    &__container{
+
+    @include respond(tab-land) {
+        padding: 1rem;
+    }
+
+    &__container {
         max-width: 120rem;
         text-align: center;
     }
 
-    &__posts{
+    &__posts {
         display: flex;
         justify-content: space-between;
         margin: 2rem 0;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
-.contact{
+.contact {
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
     background: url(/img/bg_contact.jpg) center/cover no-repeat;
-    &__container{
+
+    @include respond(tab-land) {
+        padding: 1rem;
+    }
+
+    &__container {
         max-width: 120rem;
+
+        @include respond(phone) {
+            text-align: center;
+        }
     }
 
     &__panel {
         margin-bottom: 5rem;
         display: flex;
         justify-content: space-between;
+
+        @include respond(tab-land) {
+            justify-content: center;
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
 }
@@ -136,15 +208,23 @@
     padding: 10rem 20rem;
     font-size: 2rem;
 
-    &__container{
+    @include respond(tab-land) {
+        padding: 5rem 1rem;
+    }
+
+    &__container {
         flex: 0 120rem;
         display: inherit;
         justify-content: space-between;
     }
 
-    &__element{
+    &__element {
         width: 30%;
         text-align: center;
         margin: auto 0;
-    }    
+    }
+}
+
+.wrapper {
+    flex: 0 1 60rem;
 }
