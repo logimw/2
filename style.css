@@ -6,6 +6,12 @@
 html {
   font-size: 62.5%;
   font-family: 'Raleway', sans-serif; }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 53%; } }
+  @media (max-width: 1000px) {
+    html {
+      font-size: 50%; } }
 
 h2 {
   font-size: 8rem; }
@@ -13,12 +19,29 @@ h2 {
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  transition: .5s;
+  padding: 0 2rem; }
   .top__logo {
     font-family: 'Pacifico', cursive;
     font-size: 5rem; }
-  .top__nav {
-    width: 45rem; }
+
+.low {
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  transition: .5s;
+  box-shadow: 5px 0 5px #000;
+  font-size: 1rem; }
 
 .navigation {
   font-size: 2rem;
@@ -173,6 +196,9 @@ h2 {
   .album--row {
     display: flex;
     max-width: 120rem; }
+    @media (max-width: 1200px) {
+      .album--row {
+        display: block; } }
   .album--col {
     display: flex;
     flex-direction: column; }
@@ -213,6 +239,10 @@ h2 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   cursor: pointer; }
+  @media (max-width: 1200px) {
+    .post {
+      width: 36rem;
+      margin-top: 2rem; } }
   .post::before {
     content: "";
     position: absolute;
@@ -253,6 +283,12 @@ h2 {
 
 .form {
   width: 45%; }
+  @media (max-width: 600px) {
+    .form {
+      width: 95%; } }
+  @media (max-width: 600px) {
+    .form {
+      width: 95%; } }
   .form__label {
     display: none; }
   .form__input {
@@ -293,6 +329,9 @@ textarea {
   text-align: center;
   width: 50%;
   margin: 0 auto 4rem; }
+  @media (max-width: 1200px) {
+    .contact .text {
+      width: 98%; } }
 
 .logo {
   font-size: 3rem;
@@ -301,40 +340,68 @@ textarea {
 .header {
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  height: 75vh;
   align-items: center;
-  justify-content: space-between;
   background-image: linear-gradient(to right, white 0%, white 8%, rgba(255, 255, 255, 0) 53%, rgba(255, 255, 255, 0) 100%), url(/img/bg_header_converted.jpg);
   background-size: cover;
   background-position: 0% 75%;
   padding: 0 20rem; }
+  @media (max-width: 1200px) {
+    .header {
+      padding: 0rem 1rem 5rem; } }
   .header__container {
-    width: 60rem;
+    max-width: 120rem;
     display: flex;
-    flex: 0 0 80%;
-    align-items: flex-start; }
+    margin-top: 15rem; }
 
 .about {
   background: url(/img/bg_about.jpg) 30% 50% no-repeat, #00b2b2;
-  padding: 0 20rem;
+  padding: 10rem 20rem;
   display: flex;
-  height: 80rem;
-  color: #fff;
-  justify-content: center; }
+  justify-content: center;
+  color: #fff; }
+  @media (max-width: 1200px) {
+    .about {
+      background-position: -20rem;
+      padding: 5rem 1rem; } }
+  @media (max-width: 1000px) {
+    .about {
+      background-position: -30rem;
+      padding: 5rem 1rem; } }
+  @media (max-width: 900px) {
+    .about {
+      background-position: -30rem;
+      padding: 5rem 1rem; } }
   .about__container {
-    max-width: 120rem; }
+    width: 120rem;
+    display: flex;
+    align-items: center;
+    justify-content: end; }
+  @media (max-width: 900px) {
+    .about .wrapper {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5rem; } }
 
 .services {
   background-color: #70bfff;
   padding: 10rem 20rem;
   display: flex;
   justify-content: center; }
+  @media (max-width: 900px) {
+    .services {
+      padding: 5rem 1rem; } }
+  @media (max-width: 900px) {
+    .services__box {
+      order: 2; } }
   .services__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1 120rem;
     max-width: 120rem; }
+    @media (max-width: 900px) {
+      .services__container {
+        flex-direction: column; } }
   .services__title {
     background: url(/img/bg_services.jpg) no-repeat;
     width: 55rem;
@@ -352,6 +419,9 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  @media (max-width: 900px) {
+    .gallery {
+      padding: 5rem 1rem; } }
   .gallery .text {
     width: 50rem;
     text-align: center; }
@@ -363,6 +433,9 @@ textarea {
   display: flex;
   justify-content: center;
   background: url(/img/bg_subscirbe.jpg) no-repeat center; }
+  @media (max-width: 1200px) {
+    .subscribe {
+      padding: 5rem 1rem; } }
   .subscribe__container {
     flex: 0 120rem; }
   .subscribe p {
@@ -374,6 +447,9 @@ textarea {
   justify-content: center;
   color: #fff;
   background-color: #b07cf7; }
+  @media (max-width: 1200px) {
+    .blog {
+      padding: 1rem; } }
   .blog__container {
     max-width: 120rem;
     text-align: center; }
@@ -381,18 +457,42 @@ textarea {
     display: flex;
     justify-content: space-between;
     margin: 2rem 0; }
+    @media (max-width: 900px) {
+      .blog__posts {
+        flex-direction: column;
+        align-items: center; } }
 
 .contact {
   padding: 10rem 20rem;
   display: flex;
   justify-content: center;
   background: url(/img/bg_contact.jpg) center/cover no-repeat; }
+  @media (max-width: 1200px) {
+    .contact {
+      padding: 1rem; } }
   .contact__container {
     max-width: 120rem; }
+    @media (max-width: 600px) {
+      .contact__container {
+        text-align: center; } }
+    @media (max-width: 600px) {
+      .contact__container {
+        text-align: center; } }
   .contact__panel {
     margin-bottom: 5rem;
     display: flex;
     justify-content: space-between; }
+    @media (max-width: 1200px) {
+      .contact__panel {
+        justify-content: center; } }
+    @media (max-width: 600px) {
+      .contact__panel {
+        flex-direction: column;
+        align-items: center; } }
+    @media (max-width: 600px) {
+      .contact__panel {
+        flex-direction: column;
+        align-items: center; } }
 
 .footer {
   background-color: #262626;
@@ -401,6 +501,9 @@ textarea {
   justify-content: center;
   padding: 10rem 20rem;
   font-size: 2rem; }
+  @media (max-width: 1200px) {
+    .footer {
+      padding: 5rem 1rem; } }
   .footer__container {
     flex: 0 120rem;
     display: inherit;
@@ -409,3 +512,6 @@ textarea {
     width: 30%;
     text-align: center;
     margin: auto 0; }
+
+.wrapper {
+  flex: 0 1 60rem; }
