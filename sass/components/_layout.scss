@@ -3,13 +3,19 @@
     flex-direction: column;
     height: 75vh;
     align-items: center;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 53%, rgba(255, 255, 255, 0) 100%), url(/img/bg_header_converted.jpg);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 53%, rgba(255, 255, 255, 0) 100%), url(img/bg_header_converted.jpg);
     background-size: cover;
     background-position: 0% 75%;
     padding: 0 20rem;
+
     @include respond(tab-land) {
-        padding: 0rem 1rem 5rem;     
-    }    
+        padding: 0rem 1rem 5rem;
+    }
+
+    @include respond(tab-port) {
+        height: auto;
+    }
+
 
     &__container {
         max-width: 120rem;
@@ -20,24 +26,33 @@
 }
 
 .about {
-    background: url(/img/bg_about.jpg) 30% 50% no-repeat, $color-about;
+    background: url(img/bg_about.jpg) 25% 50% no-repeat, $color-about;
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
     color: $white;
+
+    @include respond(big-desktop) {
+        background-position: -10rem;
+        padding: 5rem 1rem;
+    }
+
     @include respond(tab-land) {
-        background-position: -20rem;    
-        padding: 5rem 1rem;     
-    }    
+        background-position: -20rem;
+        padding: 5rem 1rem;
+    }
+
     @include respond(tab-mid) {
-        background-position: -30rem;    
-        padding: 5rem 1rem;     
+        background-position: -30rem;
+        padding: 5rem 1rem;
     }
-        @include respond(tab-port) {
-        background-position: -30rem;    
-        padding: 5rem 1rem;     
+
+    @include respond(tab-port) {
+        background-position: -30rem;
+        padding: 5rem 1rem;
     }
-    
+
+
     &__container {
         width: 120rem;
         display: flex;
@@ -45,41 +60,46 @@
         justify-content: end;
     }
 
-    .wrapper{
+    .wrapper {
         @include respond(tab-port) {
             background-color: rgba($black, .5);
-            padding: 5rem;  
+            padding: 5rem;
         }
 
     }
 }
+
 .services {
     background-color: $color-services;
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
+
     @include respond(tab-port) {
         padding: 5rem 1rem;
     }
-    &__box{
+
+    &__box {
         @include respond(tab-port) {
-            order: 2;         
+            order: 2;
         }
     }
+
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex: 1 120rem;
         max-width: 120rem;
+
         @include respond(tab-port) {
             flex-direction: column;
         }
     }
 
     &__title {
-        background: url(/img/bg_services.jpg) no-repeat;
-        width: 55rem;
+        background: url(img/bg_services.jpg) no-repeat;
+        max-width: 55rem;
         height: 55rem;
         display: flex;
         justify-content: center;
@@ -105,7 +125,7 @@
     }
 
     & .text {
-        width: 50rem;
+        max-width: 50rem;
         text-align: center;
     }
 
@@ -119,7 +139,7 @@
     display: flex;
     justify-content: center;
 
-    background: url(/img/bg_subscirbe.jpg) no-repeat center;
+    background: url(img/bg_subscirbe.jpg) no-repeat center;
 
     @include respond(tab-land) {
         padding: 5rem 1rem;
@@ -140,9 +160,6 @@
     display: flex;
     justify-content: center;
     color: $white;
-    //flex-direction: column;
-    //align-items: center;
-
     background-color: $color-blog;
 
     @include respond(tab-land) {
@@ -170,7 +187,7 @@
     padding: 10rem 20rem;
     display: flex;
     justify-content: center;
-    background: url(/img/bg_contact.jpg) center/cover no-repeat;
+    background: url(img/bg_contact.jpg) center/cover no-repeat;
 
     @include respond(tab-land) {
         padding: 1rem;

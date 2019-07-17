@@ -8,6 +8,11 @@
     transition: .5s;
     padding: 0 2rem;
 
+    @include respond(phone-port) {
+        background-color: $black;
+        color: $white;
+    }
+
 
 
     &__logo {
@@ -16,11 +21,33 @@
     }
 
     &__nav {
-        
+        @include respond(phone-port) {
+            // display: none;
+
+
+        }
     }
 }
 
-.low{
+.burger {
+    display: none;
+
+    @include respond(phone-port) {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    padding-right: 10px;
+    background-color: $orange;
+    transition: all .3s ease;
+}
+
+.low {
     background-color: rgba($black, 1);
     color: $white;
     position: fixed;
@@ -41,10 +68,29 @@
     justify-content: space-between;
     list-style-type: none;
 
+    @include respond(phone-port) {
+        position: absolute;
+        right: 0;
+        height: 75vh;
+        width: 50%;
+        top: 7vh; //sprawdz jak zadziała 0vh i czy burger będzie znikał
+        background-color: rgba($black, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
+    }
+
     &__element {
         display: block;
         min-width: 10rem;
         text-align: center;
+
+        // @include respond(phone-port) {
+        //     opacity: 0;
+        // }
     }
 
     &__link {
@@ -55,6 +101,10 @@
         transition: .1s;
         display: block;
         position: relative;
+
+        @include respond(phone-port) {
+            color: $white;
+        }
 
         &::before {
             position: absolute;
@@ -77,9 +127,26 @@
         }
     }
 }
-.active-link{
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.navigation-active {
+    @include respond(phone-port) {
+        transform: translateX(0%);
+    }
+}
+
+.active-link {
     font-weight: 700;
 }
+
 .text {
     font-size: 2rem;
 
@@ -448,15 +515,15 @@ textarea {
     font-family: 'Pacifico', cursive;
 }
 
-.show-gallery{
+.show-gallery {
     width: 100%;
     height: 100%;
     background: rgba($black, .5);
     position: absolute;
-    z-index: 1;
+    z-index: 99;
 }
 
-.show-image{
+.show-image {
     position: absolute;
     top: 50%;
     left: 50%;

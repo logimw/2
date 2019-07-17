@@ -1,6 +1,10 @@
 const navBar = document.getElementById("navbar");
 const navLink = document.getElementsByClassName("navigation__link");
+const navLinks = document.querySelectorAll(".navigation li");
 const gallery = document.querySelector("#gallery");
+
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".navigation");
 
 let img = document.querySelectorAll(".album__img");
 // let photo = document.querySelector()
@@ -9,29 +13,36 @@ let body = document.querySelector("body");
 
 
 
-
-console.log(img)
-
 let ofLoop;
 for(value of img){
     value.addEventListener("click", showGallery);
-    console.log(value)
-    // ofLoop = img;
+    ofLoop = value;
 
 }
 
 
-function showGallery(value){
-    console.log(ofLoop);
+burger.addEventListener("click", function(){
+    nav.classList.toggle("navigation-active");
 
+    navLinks.forEach((link, index) => {
+        if(link.style.animation){
+            link.style.animation = "";
+        } else {
+            link.style.animation = `navLinkFade 0.5s  ${index / 7 + 0.3}s`
+        }
+    });
+    burger.classList.toggle("toggle");
+});
+
+
+function showGallery(e){
+    let imgAttribute = e.target.getAttribute("src");
     const photo = document.createElement("img");
     const showGalleryBlock = document.createElement("div");
-    //for(key)
 
-    photo.setAttribute("src",`img/gallery/gallery${value}.jpg`);
+    photo.setAttribute("src",`${imgAttribute}`);
     photo.className = "show-image";
     showGalleryBlock.className = "show-gallery";
-
 
     showGalleryBlock.appendChild(photo);
     gallery.appendChild(showGalleryBlock);
@@ -50,6 +61,12 @@ function fixBar() {
             value.style.color = "#ffffff";
         }
         navBar.classList.replace("top", "low");
+    } 
+    else if(window.innerWidth <= 480) {
+        navBar.classList.replace("low", "top");
+        for (value of navLink) {
+            value.style.color = "#fff";
+        }
     } else {
         navBar.classList.replace("low", "top");
         for (value of navLink) {
