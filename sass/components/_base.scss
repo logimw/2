@@ -6,25 +6,34 @@
 }
 
 @mixin respond($breakpoint) {
-    @if $breakpoint==phone {
-        @media (max-width: 600px) {
-            @content};
+    @if $breakpoint == phone-port {
+        @media (max-width: 480px) {@content};
     }
-
-    @if $breakpoint==phone {
+    @if $breakpoint == phone {
         @media (max-width: 600px) {@content};
     }
     @if $breakpoint==tab-port {
         @media (max-width: 900px) {@content};
     }
-        @if $breakpoint==tab-mid {
+    @if $breakpoint==tab-mid {
         @media (max-width: 1000px) {@content};
     }
     @if $breakpoint == tab-land {
         @media (max-width: 1200px) {@content};
     }    
-    @if $breakpoint==big-desktop {
-        @media (min-width: 1800px) {@content};
+    @if $breakpoint == big-desktop {
+        @media (max-width: 1800px) {@content};
+    }
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 
@@ -44,10 +53,6 @@ html {
         @include respond(tab-mid) {
         font-size: 50%;            
     }
-}
-
-body {
-    //margin: 0 20rem;
 }
 
 h2 {
