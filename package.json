@@ -1,0 +1,26 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Second project of weekly dev challange",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss  style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logimw/2.git"
+  },
+  "keywords": [
+    "webdev",
+    "frontend"
+  ],
+  "author": "Mateusz Wójcik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logimw/2/issues"
+  },
+  "homepage": "https://github.com/logimw/2#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
