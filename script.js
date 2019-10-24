@@ -16,10 +16,19 @@ const keyEsc = 27;
 const counter = document.createElement("span");
 counter.classList.add("counter");
 
+class ImgSize {
+    constructor(imgHeight, imgWidth) {
+        this.imgHeight = imgHeight;
+        this.imgWidth = imgWidth;
+    }
+    get styleTop(){
+            return this.getTop();
+    }
 
-
-
-
+    getTop(){
+        return `${counter}.style.top = ${this.imgHeight}px`;
+    }
+}
 
 
 let ofLoop;
@@ -28,25 +37,12 @@ let arr = [];
 for (value of img) {
     value.addEventListener("click", showGallery);
     ofLoop = value;
-    // console.log(value);
-    // console.log(img);
-    // console.log(img[i++]);
-    arr.push(img[i++])
-
+    arr.push(img[i++]);    
 }
-console.log(arr)
-arr.forEach((element, i) => {
-    element.addEventListener("click", ()=>{
-        console.log(i);
-    })
-    console.log(element, i);
-    counter.innerHTML = `${i}`;
-});
-
 
 burger.addEventListener("click", function () {
     nav.classList.toggle("navigation-active");
-
+    
     navLinks.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = "";
@@ -57,19 +53,19 @@ burger.addEventListener("click", function () {
     burger.classList.toggle("toggle");
 });
 
-function runCounter(){
 
-}
 
+counter.style.top = ImgSize.imgHeight;
 
 function showGallery(e) {
     let imgAttribute = e.target.getAttribute("src");
-    // const frame = document.createElement("div");
+    const frame = document.createElement("div");
+    
     const photo = document.createElement("img");
-
+    
     const showGalleryBlock = body.appendChild(document.createElement("div"));
     body.style.position = "relative";
-    
+
 
     photo.classList.add("tiny-image");
     setTimeout(() => {
@@ -79,13 +75,20 @@ function showGallery(e) {
 
 
     photo.setAttribute("src", `${imgAttribute}`);
-    // photo.className = "show-image";
     showGalleryBlock.className = "show-gallery";
+    const counterSelector = document.querySelector(".counter");
 
-    showGalleryBlock.appendChild(photo);
-    showGalleryBlock.appendChild(counter);
-    // gallery.appendChild(showGalleryBlock);
 
+    frame.classList.add("frame");
+    frame.appendChild(photo);
+    frame.appendChild(counter);
+
+    showGalleryBlock.appendChild(frame);
+    let imgHeight = parseInt(getComputedStyle(photo).height);
+    let imgWidth = parseInt(getComputedStyle(photo).width);
+    let abcd = counterSelector;
+    
+    let size = new ImgSize(imgHeight, imgWidth);
 
     showGalleryBlock.addEventListener('click', function () {
         setTimeout(() => {
@@ -94,13 +97,12 @@ function showGallery(e) {
     })
     document.body.addEventListener('keyup', (e) => {
         e.preventDefault();
-        // console.log(e.keyCode);
         if (e.keyCode === keyEsc) {
             showGalleryBlock.remove();
         }
     });
 
-    
+
 }
 
 
